@@ -8,10 +8,15 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  transition: 0.2s;
+  /* tempo de transição (abrir menu) */
+  transition: 0.5s;
 }
 
-.sidebar__navigation:hover {
+/* .sidebar__navigation:hover {
+  width: 300px;
+} */
+
+nav.sidebar__navigation.expand {
   width: 300px;
 }
 
@@ -35,6 +40,10 @@ ul {
   transition: 0.2s;
 }
 
+ul li.active {
+  background-color: #ff0077;
+}
+
 .menu-item:hover {
   background: #ff0077;
 }
@@ -51,7 +60,16 @@ ul {
 }
 
 .txt-link {
+  margin-left: 70px;
+  /* suavizar o movimento do texto */
+  transition: 0.5s;
+  opacity: 0;
+}
+
+nav.sidebar__navigation.expand .txt-link {
+  /* sempre que minha sidebar tiver a classe expandir, quero que aconteça alguma coisa com o txt-link */
   margin-left: 40px;
+  opacity: 1;
 }
 
 .icon i {
